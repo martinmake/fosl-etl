@@ -2,10 +2,10 @@
 # The Embedded Template Library (https://www.etlcpp.com/)
 #######################################################################
 cmake_minimum_required(VERSION 3.5.0)
-project(etl)
+project(fosl-etl)
 
 #######################################################################
-# Define an option to allow consumers of the library to 
+# Define an option to allow consumers of the library to
 # specify the profile they would like to compile to.  If
 # not explicitly set CMake will attempt to choose an appropriate
 # profile based on the compiler
@@ -15,9 +15,9 @@ set(ETL_PROFILE "DEFAULT" CACHE STRING "Defines what profile header to include. 
 
 option(BUILD_TESTS "Build unit tests" OFF)
 
-add_library(etl INTERFACE)
+add_library(${PROJECT_NAME} INTERFACE)
 
-target_include_directories(etl
+target_include_directories(${PROJECT_NAME}
   INTERFACE
   include
   include/etl/profiles
@@ -32,7 +32,7 @@ if (${ETL_PROFILE} STREQUAL DEFAULT)
 
   elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     set(ETL_PROFILE "PROFILE_MSVC")
- 
+
   elseif (CMAKE_CXX_COMPILER_ID MATCHES "ARMCC")
     if (CXX_STANDARD EQUAL 11)
       set(ETL_PROFILE "PROFILE_ARMV6")
@@ -45,18 +45,18 @@ if (${ETL_PROFILE} STREQUAL DEFAULT)
   else()
     message(FATAL_ERROR "Can't generate default profile for compiler: ${CMAKE_CXX_COMPILER_ID}")
   endif()
-endif() 
+endif()
 
 message(STATUS "Compiling with ETL profile set to: ${ETL_PROFILE}")
 
-target_compile_definitions(etl
+target_compile_definitions(${PROJECT_NAME}
   INTERFACE
-  ${ETL_PROFILE} 
+  ${ETL_PROFILE}
   )
 
 
 
 if (BUILD_TESTS)
   enable_testing()
-  add_subdirectory(test) 
+  add_subdirectory(test)
 endif()
