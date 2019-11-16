@@ -59,7 +59,7 @@ SOFTWARE.
 #define ETL_PLATFORM_32BIT (UINT32_MAX == UINTPTR_MAX)
 #define ETL_PLATFORM_64BIT (UINT64_MAX == UINTPTR_MAX)
 
-#include "etl_profile.h"
+#include "fosl/etl_profile.h"
 
 // The macros below are dependent on the profile.
 

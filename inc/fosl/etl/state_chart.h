@@ -31,10 +31,10 @@ SOFTWARE.
 
 #include <stdint.h>
 
-#include "etl/platform.h"
-#include "etl/nullptr.h"
-#include "etl/array.h"
-#include "etl/array_view.h"
+#include "fosl/etl/platform.h"
+#include "fosl/etl/nullptr.h"
+#include "fosl/etl/array.h"
+#include "fosl/etl/array_view.h"
 
 namespace etl
 {

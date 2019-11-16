@@ -29,15 +29,15 @@ SOFTWARE.
 #include <stdint.h>
 #include <limits.h>
 
-#include "etl/platform.h"
-#include "etl/type_traits.h"
-#include "etl/nullptr.h"
-#include "etl/endianness.h"
-#include "etl/integral_limits.h"
-#include "etl/binary.h"
+#include "fosl/etl/platform.h"
+#include "fosl/etl/type_traits.h"
+#include "fosl/etl/nullptr.h"
+#include "fosl/etl/endianness.h"
+#include "fosl/etl/integral_limits.h"
+#include "fosl/etl/binary.h"
 
-#include "etl/stl/algorithm.h"
-#include "etl/stl/iterator.h"
+#include "fosl/etl/stl/algorithm.h"
+#include "fosl/etl/stl/iterator.h"
 
 #include "private/minmax_push.h"
 
