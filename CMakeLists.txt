@@ -19,8 +19,8 @@ add_library(${PROJECT_NAME} INTERFACE)
 
 target_include_directories(${PROJECT_NAME}
   INTERFACE
-  include
-  include/etl/profiles
+  include/fosl
+  include/fosl/etl/profiles
   )
 
 if (${ETL_PROFILE} STREQUAL DEFAULT)
